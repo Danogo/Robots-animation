@@ -1,0 +1,114 @@
+.android-mike {
+
+    opacity: 0;
+    animation: mikeSlide 2s ease 2s;
+    animation-fill-mode: forwards;
+
+    .head,
+    .left_arm,
+    .torso,
+    .right_arm,
+    .left_leg,
+    .right_leg {
+        background-color: $color-mike;
+    }
+
+    .head {
+        width: 20rem;
+        margin: 0 auto;
+        height: 15rem;
+        border-radius: 3rem;
+        margin-bottom: 1rem;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .eyes {
+        flex: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .left_eye,
+    .right_eye {
+        width: 2rem;
+        height: 2.5rem;
+        border-radius: 1.5rem;
+        background-color: $color-white;
+    }
+
+    .mouth {
+        width: 70%;
+        background-color: $color-white;
+        height: 2rem;
+        border-radius: 5px;
+    }
+ 
+    .upper_body {
+        width: 30rem;
+        height: 15rem;
+        display: flex;
+    }
+
+    .left_arm,
+    .right_arm {
+        width: 4rem;
+        height: 12.5rem;
+        border-radius: 1rem;
+    }
+    
+    .left_arm {
+        margin-right: 1rem;
+    }
+
+    .right_arm {
+        margin-left: 1rem;
+    }
+
+    .torso {
+        width: 20rem;
+        height: 20rem;
+        border-radius: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__heart {
+        text-decoration: none;
+        display: inline-block;
+        font-size: 5rem;
+        color: $color-heart;
+        animation: mikeHeart 1.5s ease-in-out infinite alternate;
+
+        &:hover {
+            animation-play-state: paused;
+            color: $color-heart-light;
+        }
+    }
+
+    .lower_body {
+        width: 20rem;
+        height: 20rem;
+        margin: 0 auto;
+        display: flex;
+    }
+
+    .left_leg,
+    .right_leg {
+        width: 4rem;
+        height: 12rem;
+        border-radius: 1rem;
+    }
+
+    .left_leg {
+        margin-left: 45px;
+    }
+ 
+    .right_leg {
+        margin-left: 3rem;
+    }
+ 
+}

@@ -1,0 +1,20 @@
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Expletus Sans', sans-serif;
+    font-size: 4rem;
+    color: $color-white;
+    font-weight: 700;
+    letter-spacing: .75rem;
+    text-transform: uppercase;
+    background-color: rgba($color-bg-light, .6);
+    padding: 1rem 2rem;
+    display: inline-block;
+    text-shadow: .3rem .3rem 1.5rem rgba($color-black, .2);
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+    border-radius: 3px;
+    margin-bottom: 6rem;
+    line-height: 1.4;
+}

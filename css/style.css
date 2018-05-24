@@ -1,0 +1,285 @@
+@keyframes lukeFall {
+  0% {
+    opacity: 0;
+    transform: translateY(-20rem); }
+  80% {
+    transform: translateY(2rem); }
+  100% {
+    transform: translateY(0); } }
+
+@keyframes mikeSlide {
+  0% {
+    opacity: 0;
+    transform: translateX(20rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes mikeHeart {
+  0% {
+    transform: scale(0.7); }
+  100% {
+    transform: scale(1.2); } }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box; }
+
+body {
+  box-sizing: border-box; }
+
+.container {
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(to right bottom, rgba(0, 153, 255, 0.9), rgba(191, 230, 255, 0.9)), url("../img/pattern.png");
+  background-position: top;
+  background-size: cover;
+  padding: 3rem; }
+
+.robots {
+  display: flex;
+  justify-content: space-around;
+  min-height: 75vh;
+  align-items: center; }
+
+.reset {
+  display: inline-block;
+  background-color: rgba(191, 230, 255, 0.6);
+  border-radius: 5px;
+  position: fixed;
+  top: 3rem;
+  left: 3rem; }
+  .reset__icon {
+    display: inline-block;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    font-size: 4rem;
+    color: #FFF;
+    transition: transform .3s ease-out;
+    z-index: 1; }
+  .reset:hover > .reset__icon {
+    transform: rotate(270deg); }
+
+.container {
+  text-align: center; }
+
+h1 {
+  font-family: 'Expletus Sans', sans-serif;
+  font-size: 4rem;
+  color: #FFF;
+  font-weight: 700;
+  letter-spacing: .75rem;
+  text-transform: uppercase;
+  background-color: rgba(191, 230, 255, 0.6);
+  padding: 1rem 2rem;
+  display: inline-block;
+  text-shadow: 0.3rem 0.3rem 1.5rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+  margin-bottom: 6rem;
+  line-height: 1.4; }
+
+.android-luke {
+  animation: lukeFall 2s ease-in-out; }
+  .android-luke .head,
+  .android-luke .left_arm,
+  .android-luke .torso,
+  .android-luke .right_arm,
+  .android-luke .left_leg,
+  .android-luke .right_leg {
+    background-color: #6600FF; }
+  .android-luke .head {
+    width: 20rem;
+    margin: 0 auto;
+    height: 20rem;
+    border-radius: 20rem 20rem 15px 15px;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 2rem;
+    transform: rotate(-15deg) translateY(-2rem); }
+  .android-luke .eyes {
+    flex: 100%;
+    display: flex;
+    justify-content: space-around; }
+  .android-luke .left_eye,
+  .android-luke .right_eye {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 1.5rem;
+    background-color: #FFF;
+    position: relative; }
+  .android-luke .left_eye::after,
+  .android-luke .right_eye::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    background-color: #0099FF;
+    position: absolute;
+    top: 100%;
+    -webkit-clip-path: polygon(50% 0%, 62% 25%, 75% 46%, 78% 66%, 73% 83%, 55% 93%, 33% 84%, 28% 65%, 30% 46%, 40% 25%);
+    clip-path: polygon(50% 0%, 62% 25%, 75% 46%, 78% 66%, 73% 83%, 55% 93%, 33% 84%, 28% 65%, 30% 46%, 40% 25%); }
+  .android-luke .mouth {
+    width: 10rem;
+    height: 4rem;
+    background-color: #FFF;
+    border-radius: 50% 50% 10px 10px; }
+  .android-luke .upper_body {
+    width: 30rem;
+    height: 15rem;
+    display: flex; }
+  .android-luke .left_arm,
+  .android-luke .right_arm {
+    width: 4rem;
+    height: 12.5rem;
+    border-radius: 10rem; }
+  .android-luke .left_arm {
+    margin-right: 1rem;
+    transform: rotate(120deg);
+    transform-origin: top; }
+  .android-luke .left_arm::after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 1rem;
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    background-color: #999; }
+  .android-luke .left_arm::before {
+    content: '';
+    display: inline-block;
+    width: 50%;
+    height: 2rem;
+    position: absolute;
+    top: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #CCC;
+    border-radius: 50%;
+    z-index: 1; }
+  .android-luke .right_arm {
+    margin-left: 1rem;
+    transform: translate(2rem, 1rem) rotate(30deg); }
+  .android-luke .torso {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 5px 5px 5rem 5rem;
+    transform: skewX(15deg) translateX(-2.5rem);
+    transform-origin: top left; }
+  .android-luke .lower_body {
+    width: 20rem;
+    height: 20rem;
+    margin: 0 auto;
+    display: flex; }
+  .android-luke .left_leg,
+  .android-luke .right_leg {
+    width: 4rem;
+    height: 12rem;
+    border-radius: 0 0 10rem 10rem;
+    position: relative; }
+  .android-luke .left_leg::after,
+  .android-luke .right_leg::after {
+    content: '';
+    width: 100%;
+    height: 3rem;
+    background-color: #FFF;
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 0; }
+  .android-luke .left_leg {
+    margin-left: 45px;
+    transform: translate(-3rem, 4rem) rotate(-30deg); }
+  .android-luke .right_leg {
+    margin-left: 3rem;
+    transform-origin: bottom right;
+    transform: rotate(145deg); }
+
+.android-mike {
+  opacity: 0;
+  animation: mikeSlide 2s ease 2s;
+  animation-fill-mode: forwards; }
+  .android-mike .head,
+  .android-mike .left_arm,
+  .android-mike .torso,
+  .android-mike .right_arm,
+  .android-mike .left_leg,
+  .android-mike .right_leg {
+    background-color: #99FF00; }
+  .android-mike .head {
+    width: 20rem;
+    margin: 0 auto;
+    height: 15rem;
+    border-radius: 3rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center; }
+  .android-mike .eyes {
+    flex: 100%;
+    display: flex;
+    justify-content: space-around; }
+  .android-mike .left_eye,
+  .android-mike .right_eye {
+    width: 2rem;
+    height: 2.5rem;
+    border-radius: 1.5rem;
+    background-color: #FFF; }
+  .android-mike .mouth {
+    width: 70%;
+    background-color: #FFF;
+    height: 2rem;
+    border-radius: 5px; }
+  .android-mike .upper_body {
+    width: 30rem;
+    height: 15rem;
+    display: flex; }
+  .android-mike .left_arm,
+  .android-mike .right_arm {
+    width: 4rem;
+    height: 12.5rem;
+    border-radius: 1rem; }
+  .android-mike .left_arm {
+    margin-right: 1rem; }
+  .android-mike .right_arm {
+    margin-left: 1rem; }
+  .android-mike .torso {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .android-mike__heart {
+    text-decoration: none;
+    display: inline-block;
+    font-size: 5rem;
+    color: #FF001B;
+    animation: mikeHeart 1.5s ease-in-out infinite alternate; }
+    .android-mike__heart:hover {
+      animation-play-state: paused;
+      color: #FF4054; }
+  .android-mike .lower_body {
+    width: 20rem;
+    height: 20rem;
+    margin: 0 auto;
+    display: flex; }
+  .android-mike .left_leg,
+  .android-mike .right_leg {
+    width: 4rem;
+    height: 12rem;
+    border-radius: 1rem; }
+  .android-mike .left_leg {
+    margin-left: 45px; }
+  .android-mike .right_leg {
+    margin-left: 3rem; }

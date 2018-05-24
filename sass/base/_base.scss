@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(to right bottom, rgba($color-bg, 0.9), rgba($color-bg-light, 0.9)), url('../img/pattern.png');
+    background-position: top;
+    background-size: cover;
+    padding: 3rem;
+}
+
+.robots {
+    display: flex;
+    justify-content: space-around;
+    min-height: 75vh;
+    align-items: center;
+}
+
+.reset {
+    display: inline-block;
+    background-color: rgba($color-bg-light, .6);
+    border-radius: 5px;
+    position: fixed;
+    top: 3rem;
+    left: 3rem;
+
+    &__icon {    
+        display: inline-block;
+        text-decoration: none;
+        padding: 1rem 2rem;
+        font-size: 4rem;
+        color: $color-white;   
+        transition: transform .3s ease-out;
+        z-index: 1;
+    }
+
+    &:hover > &__icon {
+        transform: rotate(270deg);
+    }
+}
+
+
+
