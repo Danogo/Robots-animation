@@ -24,9 +24,40 @@
 
 @keyframes mikeHeart {
     0% {
+        opacity: 1;
         transform: scale(.7);
     }
     100% {
         transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+@keyframes mikeMouth {
+    0% {
+        border-radius: 5px;
+    }
+    100% {
+        border-radius: 50%;
+        width: 40%;
+        height: 40%;
+    }
+}
+
+@keyframes mikeArmL {
+    0% {
+    }
+    100% {
+        transform-origin: top;
+        transform: rotate(190deg);
+    }
+}
+
+@keyframes mikeArmR {
+    0% {
+    }
+    100% {
+        transform-origin: top;
+        transform: rotate(-190deg);
     }
 }

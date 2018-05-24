@@ -46,35 +46,40 @@
         -webkit-clip-path: polygon(50% 0%, 62% 25%, 75% 46%, 78% 66%, 73% 83%, 55% 93%, 33% 84%, 28% 65%, 30% 46%, 40% 25%);
         clip-path: polygon(50% 0%, 62% 25%, 75% 46%, 78% 66%, 73% 83%, 55% 93%, 33% 84%, 28% 65%, 30% 46%, 40% 25%);
     }
+
     .mouth {
         width: 10rem;
         height: 4rem;
         background-color: $color-white;
         border-radius: 50% 50% 10px 10px;
     }
+
     .upper_body {
         width: 30rem;
         height: 15rem;
         display: flex;
     }
+
     .left_arm,
     .right_arm {
         width: 4rem;
         height: 12.5rem;
         border-radius: 10rem;
     }
+
     .left_arm {
         margin-right: 1rem;
-        transform: rotate(120deg);
+        transform: rotate(120deg) skewX(10deg);
         transform-origin: top;
     }
+
     .left_arm::after {
         content: '';
         display: inline-block;
         width: 100%;
         height: 1rem;
         position: absolute;
-        top: 3rem;
+        bottom: 3rem;
         left: 0;
         background-color: $color-grey;
     }
@@ -84,7 +89,7 @@
         width: 50%;
         height: 2rem;
         position: absolute;
-        top: 2.5rem;
+        bottom: 2.5rem;
         left: 50%;
         transform: translateX(-50%);
         background-color: $color-grey-light;
@@ -93,7 +98,8 @@
     }
     .right_arm {
         margin-left: 1rem;
-        transform: translate(2rem, 1rem) rotate(30deg);
+        transform: translate(2rem, 1rem) rotate(-145deg);
+        transform-origin: top;
     }
     .torso {
         width: 20rem;
@@ -126,10 +132,12 @@
         bottom: 0;
         left: 0;
     }
+
     .left_leg {
         margin-left: 45px;
         transform: translate(-3rem, 4rem) rotate(-30deg);
     }
+
     .right_leg {
         margin-left: 3rem;
         transform-origin: bottom right;
@@ -137,6 +145,46 @@
     }
 
     &:target {
+        .head {
+            transform: rotate(0) translateY(0);
+            transition: all .4s ease;
+        }
+
+        .torso {
+            transform: skewX(0) translateX(0);
+            transition: all .4s ease .4s;
+        }
+
+        .right_arm {
+            transform: translate(0, 0) rotate(0);
+            transition: all .4s ease .8s;
+        }
+
+        .left_arm {
+            transform: rotate(0);
+            transition: transform .4s ease .8s;
+        }
+
+        .left_leg {
+            transform: translate(0, 0) rotate(0);
+            transition: all .4s ease 1.2s;
+        }
+
+        .right_leg {
+            transform: rotate(0);
+            transition: transform .4s ease 1.2s;
+        }
+
+        .left_eye::after,
+        .right_eye::after {
+            background-color: transparent;
+            transition: background-color .4s ease 1.6s;
+        }
+
+        .mouth {
+            border-radius: 5px 5px 50% 50%;
+            transition: border-radius .4s ease 2s;
+        }
         
     }
 }

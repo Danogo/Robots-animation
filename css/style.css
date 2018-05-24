@@ -17,9 +17,31 @@
 
 @keyframes mikeHeart {
   0% {
+    opacity: 1;
     transform: scale(0.7); }
   100% {
-    transform: scale(1.2); } }
+    transform: scale(1.2);
+    opacity: 1; } }
+
+@keyframes mikeMouth {
+  0% {
+    border-radius: 5px; }
+  100% {
+    border-radius: 50%;
+    width: 40%;
+    height: 40%; } }
+
+@keyframes mikeArmL {
+  0% { }
+  100% {
+    transform-origin: top;
+    transform: rotate(190deg); } }
+
+@keyframes mikeArmR {
+  0% { }
+  100% {
+    transform-origin: top;
+    transform: rotate(-190deg); } }
 
 * {
   margin: 0;
@@ -143,7 +165,7 @@ h1 {
     border-radius: 10rem; }
   .android-luke .left_arm {
     margin-right: 1rem;
-    transform: rotate(120deg);
+    transform: rotate(120deg) skewX(10deg);
     transform-origin: top; }
   .android-luke .left_arm::after {
     content: '';
@@ -151,7 +173,7 @@ h1 {
     width: 100%;
     height: 1rem;
     position: absolute;
-    top: 3rem;
+    bottom: 3rem;
     left: 0;
     background-color: #999; }
   .android-luke .left_arm::before {
@@ -160,7 +182,7 @@ h1 {
     width: 50%;
     height: 2rem;
     position: absolute;
-    top: 2.5rem;
+    bottom: 2.5rem;
     left: 50%;
     transform: translateX(-50%);
     background-color: #CCC;
@@ -168,7 +190,8 @@ h1 {
     z-index: 1; }
   .android-luke .right_arm {
     margin-left: 1rem;
-    transform: translate(2rem, 1rem) rotate(30deg); }
+    transform: translate(2rem, 1rem) rotate(-145deg);
+    transform-origin: top; }
   .android-luke .torso {
     width: 20rem;
     height: 20rem;
@@ -203,6 +226,31 @@ h1 {
     margin-left: 3rem;
     transform-origin: bottom right;
     transform: rotate(145deg); }
+  .android-luke:target .head {
+    transform: rotate(0) translateY(0);
+    transition: all .4s ease; }
+  .android-luke:target .torso {
+    transform: skewX(0) translateX(0);
+    transition: all .4s ease .4s; }
+  .android-luke:target .right_arm {
+    transform: translate(0, 0) rotate(0);
+    transition: all .4s ease .8s; }
+  .android-luke:target .left_arm {
+    transform: rotate(0);
+    transition: transform .4s ease .8s; }
+  .android-luke:target .left_leg {
+    transform: translate(0, 0) rotate(0);
+    transition: all .4s ease 1.2s; }
+  .android-luke:target .right_leg {
+    transform: rotate(0);
+    transition: transform .4s ease 1.2s; }
+  .android-luke:target .left_eye::after,
+  .android-luke:target .right_eye::after {
+    background-color: transparent;
+    transition: background-color .4s ease 1.6s; }
+  .android-luke:target .mouth {
+    border-radius: 5px 5px 50% 50%;
+    transition: border-radius .4s ease 2s; }
 
 .android-mike {
   opacity: 0;
@@ -239,7 +287,9 @@ h1 {
     width: 70%;
     background-color: #FFF;
     height: 2rem;
-    border-radius: 5px; }
+    border-radius: 5px;
+    animation: mikeMouth .4s ease-in-out 4s;
+    animation-fill-mode: forwards; }
   .android-mike .upper_body {
     width: 30rem;
     height: 15rem;
@@ -250,9 +300,13 @@ h1 {
     height: 12.5rem;
     border-radius: 1rem; }
   .android-mike .left_arm {
-    margin-right: 1rem; }
+    margin-right: 1rem;
+    animation: mikeArmL .4s ease-in 4s;
+    animation-fill-mode: forwards; }
   .android-mike .right_arm {
-    margin-left: 1rem; }
+    margin-left: 1rem;
+    animation: mikeArmR .4s ease-in 4s;
+    animation-fill-mode: forwards; }
   .android-mike .torso {
     width: 20rem;
     height: 20rem;
@@ -263,9 +317,21 @@ h1 {
   .android-mike__heart {
     text-decoration: none;
     display: inline-block;
-    font-size: 5rem;
+    font-size: 10rem;
     color: #FF001B;
-    animation: mikeHeart 1.5s ease-in-out infinite alternate; }
+    opacity: 0;
+    animation: mikeHeart 1.5s ease-in-out 4.8s infinite alternate;
+    position: relative; }
+    .android-mike__heart .save {
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      color: #FFF;
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -30%);
+      font-weight: 700; }
     .android-mike__heart:hover {
       animation-play-state: paused;
       color: #FF4054; }
@@ -283,3 +349,12 @@ h1 {
     margin-left: 45px; }
   .android-mike .right_leg {
     margin-left: 3rem; }
+
+.android-luke:target + .android-mike .mouth {
+  animation: mikeMouth .4s alternate 2s; }
+
+.android-luke:target + .android-mike .left_arm {
+  animation: mikeArmL .4 reverse; }
+
+.android-luke:target + .android-mike .right_arm {
+  animation: mikeArmR .4 reverse; }

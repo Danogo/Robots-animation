@@ -44,6 +44,8 @@
         background-color: $color-white;
         height: 2rem;
         border-radius: 5px;
+        animation: mikeMouth .4s ease-in-out 4s;
+        animation-fill-mode: forwards;
     }
  
     .upper_body {
@@ -61,10 +63,14 @@
     
     .left_arm {
         margin-right: 1rem;
+        animation: mikeArmL .4s ease-in 4s;
+        animation-fill-mode: forwards;
     }
 
     .right_arm {
         margin-left: 1rem;
+        animation: mikeArmR .4s ease-in 4s;
+        animation-fill-mode: forwards;
     }
 
     .torso {
@@ -79,9 +85,23 @@
     &__heart {
         text-decoration: none;
         display: inline-block;
-        font-size: 5rem;
+        font-size: 10rem;
         color: $color-heart;
-        animation: mikeHeart 1.5s ease-in-out infinite alternate;
+        opacity: 0;
+        animation: mikeHeart 1.5s ease-in-out 4.8s infinite alternate;
+        position: relative;
+
+        .save {
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            color: $color-white;
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -30%);
+            font-weight: 700;
+        }
 
         &:hover {
             animation-play-state: paused;
@@ -111,4 +131,19 @@
         margin-left: 3rem;
     }
  
+}
+
+.android-luke:target + .android-mike  {
+    .mouth {
+      animation: mikeMouth .4s alternate 2s;
+    }
+
+    .left_arm {
+        animation: mikeArmL .4 reverse;
+    }
+
+    .right_arm {
+       animation: mikeArmR .4 reverse;
+    }
+
 }
