@@ -18,3 +18,7 @@ h1 {
     margin-bottom: 6rem;
     line-height: 1.4;
 }
+
+.theme-checkbox:checked ~ .container h1 {
+    background-image: linear-gradient(to right bottom, rgba($color-luke, .6), rgba($color-luke, .3));
+}

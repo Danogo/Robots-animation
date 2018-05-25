@@ -16,7 +16,7 @@ body {
 .container {
     min-height: 100vh;
     width: 100%;
-    background-image: linear-gradient(to right bottom, rgba($color-luke, 0.9), rgba($color-mike, 0.9)), url('../img/pattern.png');
+    background-image: linear-gradient(to right bottom, rgba($color-bg, 0.9), rgba($color-bg-light, 0.9)), url('../img/pattern.png');
     background-position: top;
     background-size: cover;
     padding: 3rem;
@@ -29,6 +29,7 @@ body {
     align-items: center;
 }
 
+// RESET BUTTON
 .reset {
     display: inline-block;
     background-color: rgba($color-bg-light, .6);
@@ -52,5 +53,60 @@ body {
     }
 }
 
+// THEME TOGGLE BUTTON
+.theme-checkbox {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
 
+    &:checked ~ .container {
+        background-image: linear-gradient(to right, rgba($color-mike, 0.9), rgba($color-luke, 0.9)), url('../img/pattern.png');
 
+        .reset {    
+            background-color: rgba($color-luke, .6);
+        }
+
+    }
+}
+
+.theme-btn {
+    display: block;
+    position: fixed;
+    top: 5rem;
+    right: 3rem;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 5px solid rgba($color-white, .6);
+    cursor: pointer;
+    transition: all .4s ease;
+
+    &::after {
+        content: '';
+        display: inline-block;
+        width: 50%;
+        height: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background-color: rgba($color-bg-light, .6);
+        opacity: 0;
+        transition: all .4s ease;
+    }
+}
+
+.theme-btn:hover::after {
+        opacity: 1;
+        background-color: rgba($color-luke, .6);
+}
+
+.theme-checkbox:checked + .theme-btn {
+    border: 5px solid rgba($color-white, .6);
+    &:hover::after {
+        opacity: 1;
+        background-color: rgba($color-bg-light, .6);
+    }
+}
