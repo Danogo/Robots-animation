@@ -11,6 +11,7 @@
     }
 }
 
+// ============ MIKE ==============
 @keyframes mikeSlide {
     0% {
         opacity: 0;
@@ -35,6 +36,8 @@
 
 @keyframes mikeMouth {
     0% {
+        width: 70%;
+        height: 2rem;
         border-radius: 5px;
     }
     100% {
@@ -44,8 +47,18 @@
     }
 }
 
+@keyframes mikeMouthSmile {
+    100% {
+        width: 60%;
+        height: 40%;
+        border-radius: 5px 5px 50% 50%;
+    }
+}
+
 @keyframes mikeArmL {
     0% {
+        transform-origin: top;
+        transform: rotate(0);
     }
     100% {
         transform-origin: top;
@@ -53,11 +66,45 @@
     }
 }
 
+@keyframes mikeArmLUp {
+    0% {
+    }
+    100% {
+        transform-origin: top;
+        transform: rotate(135deg);
+    }
+}
+
 @keyframes mikeArmR {
     0% {
+        transform-origin: top;
+        transform: rotate(0);
     }
     100% {
         transform-origin: top;
         transform: rotate(-190deg);
     }
 }
+
+@keyframes mikeArmRUp {
+    0% {
+    }
+    100% {
+        transform-origin: top;
+        transform: rotate(-120deg);
+    }
+}
+
+@keyframes shrink {
+    0% { }
+    100% {
+        transform: scale(0.8);
+    }
+}
+
+@keyframes grow {
+    to {
+        transform: scale(1.1);
+    }
+}
+

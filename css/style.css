@@ -25,23 +25,56 @@
 
 @keyframes mikeMouth {
   0% {
+    width: 70%;
+    height: 2rem;
     border-radius: 5px; }
   100% {
     border-radius: 50%;
     width: 40%;
     height: 40%; } }
 
+@keyframes mikeMouthSmile {
+  100% {
+    width: 60%;
+    height: 40%;
+    border-radius: 5px 5px 50% 50%; } }
+
 @keyframes mikeArmL {
-  0% { }
+  0% {
+    transform-origin: top;
+    transform: rotate(0); }
   100% {
     transform-origin: top;
     transform: rotate(190deg); } }
 
-@keyframes mikeArmR {
+@keyframes mikeArmLUp {
   0% { }
   100% {
     transform-origin: top;
+    transform: rotate(135deg); } }
+
+@keyframes mikeArmR {
+  0% {
+    transform-origin: top;
+    transform: rotate(0); }
+  100% {
+    transform-origin: top;
     transform: rotate(-190deg); } }
+
+@keyframes mikeArmRUp {
+  0% { }
+  100% {
+    transform-origin: top;
+    transform: rotate(-120deg); } }
+
+@keyframes shrink {
+  0% { }
+  100% {
+    transform: scale(0.8); } }
+
+@keyframes grow {
+  to {
+    transform: scale(1.1); } }
 
 * {
   margin: 0;
@@ -272,7 +305,9 @@ h1 {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    animation: shrink .6s ease 4s;
+    animation-fill-mode: forwards; }
   .android-mike .eyes {
     flex: 100%;
     display: flex;
@@ -316,7 +351,7 @@ h1 {
     align-items: center; }
   .android-mike__heart {
     text-decoration: none;
-    display: inline-block;
+    display: block;
     font-size: 10rem;
     color: #FF001B;
     opacity: 0;
@@ -350,11 +385,26 @@ h1 {
   .android-mike .right_leg {
     margin-left: 3rem; }
 
-.android-luke:target + .android-mike .mouth {
-  animation: mikeMouth .4s alternate 2s; }
-
 .android-luke:target + .android-mike .left_arm {
-  animation: mikeArmL .4 reverse; }
+  transform-origin: top;
+  transform: rotate(190deg);
+  animation: mikeArmLUp .4s 2s;
+  animation-fill-mode: forwards; }
 
 .android-luke:target + .android-mike .right_arm {
-  animation: mikeArmR .4 reverse; }
+  transform-origin: top;
+  transform: rotate(-190deg);
+  animation: mikeArmRUp .4s 2s;
+  animation-fill-mode: forwards; }
+
+.android-luke:target + .android-mike .head {
+  transform: scale(0.8);
+  animation: grow .6s 2.2s;
+  animation-fill-mode: forwards; }
+
+.android-luke:target + .android-mike .mouth {
+  border-radius: 50%;
+  width: 40%;
+  height: 40%;
+  animation: mikeMouthSmile .4s 2.2s;
+  animation-fill-mode: forwards; }

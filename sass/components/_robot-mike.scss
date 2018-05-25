@@ -23,6 +23,8 @@
         flex-flow: row wrap;
         justify-content: center;
         align-items: center;
+        animation: shrink .6s ease 4s;
+        animation-fill-mode: forwards;
     }
 
     .eyes {
@@ -84,7 +86,7 @@
 
     &__heart {
         text-decoration: none;
-        display: inline-block;
+        display: block;
         font-size: 10rem;
         color: $color-heart;
         opacity: 0;
@@ -130,20 +132,34 @@
     .right_leg {
         margin-left: 3rem;
     }
- 
 }
 
 .android-luke:target + .android-mike  {
-    .mouth {
-      animation: mikeMouth .4s alternate 2s;
-    }
-
     .left_arm {
-        animation: mikeArmL .4 reverse;
+        transform-origin: top;
+        transform: rotate(190deg);
+        animation: mikeArmLUp .4s 2s;
+        animation-fill-mode: forwards;
     }
 
     .right_arm {
-       animation: mikeArmR .4 reverse;
+        transform-origin: top;
+        transform: rotate(-190deg);
+        animation: mikeArmRUp .4s 2s;
+        animation-fill-mode: forwards;
+    }
+    
+    .head {
+        transform: scale(0.8);
+        animation: grow .6s 2.2s;
+        animation-fill-mode: forwards;
     }
 
+    .mouth {
+        border-radius: 50%;
+        width: 40%;
+        height: 40%;
+        animation: mikeMouthSmile .4s 2.2s;
+        animation-fill-mode: forwards;
+    }
 }
