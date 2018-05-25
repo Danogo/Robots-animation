@@ -1,0 +1,16 @@
+//ANOTHER METHOD with map, not used in this project
+
+// store breakpoints in a map
+$breakpoints: (
+    xs: 37.5em,
+    sm: 43.75em,
+    md: 56.25em,
+    lg: 75em,
+);
+ 
+// mixin :: Size (sm, md, lg)
+@mixin break($size) {
+ 
+    // map over breakpoints and use value of passed in size
+    @media screen and (max-width: map-get($breakpoints, $size)) { @content; } //using map-get to grab variables values
+}

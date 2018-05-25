@@ -84,6 +84,15 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box; }
+  @media screen and (max-width: 75em) {
+    html {
+      font-size: 50%; } }
+  @media screen and (max-width: 56.25em) {
+    html {
+      font-size: 40%; } }
+  @media screen and (max-width: 43.75em) {
+    html {
+      font-size: 35%; } }
 
 body {
   box-sizing: border-box; }
@@ -101,6 +110,9 @@ body {
   justify-content: space-around;
   min-height: 75vh;
   align-items: center; }
+  @media screen and (max-width: 37.5em) {
+    .robots {
+      flex-flow: column wrap; } }
 
 .reset {
   display: inline-block;
@@ -109,6 +121,10 @@ body {
   position: fixed;
   top: 3rem;
   left: 3rem; }
+  @media screen and (max-width: 43.75em) {
+    .reset {
+      top: auto;
+      bottom: 3rem; } }
   .reset__icon {
     display: inline-block;
     text-decoration: none;
@@ -141,6 +157,10 @@ body {
   border: 5px solid rgba(255, 255, 255, 0.6);
   cursor: pointer;
   transition: all .4s ease; }
+  @media screen and (max-width: 43.75em) {
+    .theme-btn {
+      top: auto;
+      bottom: 3rem; } }
   .theme-btn::after {
     content: '';
     display: inline-block;
@@ -301,7 +321,7 @@ h1 {
     bottom: 0;
     left: 0; }
   .android-luke .left_leg {
-    margin-left: 45px;
+    margin-left: 4.5rem;
     transform: translate(-3rem, 4rem) rotate(-30deg); }
   .android-luke .right_leg {
     margin-left: 3rem;
@@ -429,7 +449,7 @@ h1 {
     height: 12rem;
     border-radius: 1rem; }
   .android-mike .left_leg {
-    margin-left: 45px; }
+    margin-left: 4.5rem; }
   .android-mike .right_leg {
     margin-left: 3rem; }
 
