@@ -86,7 +86,7 @@
 
     &__heart {
         text-decoration: none;
-        display: block;
+        display: inline-block;
         font-size: 10rem;
         color: $color-heart;
         opacity: 0;
@@ -161,5 +161,10 @@
         height: 40%;
         animation: mikeMouthSmile .4s 2.2s;
         animation-fill-mode: forwards;
+    }
+
+    .android-mike__heart {
+        animation: none;
+        display: none;
     }
 }
