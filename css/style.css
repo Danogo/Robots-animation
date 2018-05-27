@@ -100,7 +100,7 @@ body {
 .container {
   min-height: 100vh;
   width: 100%;
-  background-image: linear-gradient(to right, rgba(153, 255, 0, 0.9), rgba(102, 0, 255, 0.9)), url("../img/pattern.png");
+  background-image: linear-gradient(to right bottom, rgba(0, 153, 255, 0.9), rgba(191, 230, 255, 0.9)), url("../img/pattern.png");
   background-position: top;
   background-size: cover;
   padding: 3rem; }
@@ -141,7 +141,7 @@ body {
   visibility: hidden;
   position: absolute; }
   .theme-checkbox:checked ~ .container {
-    background-image: linear-gradient(to right bottom, rgba(0, 153, 255, 0.9), rgba(191, 230, 255, 0.9)), url("../img/pattern.png"); }
+    background-image: linear-gradient(to right, rgba(153, 255, 0, 0.9), rgba(102, 0, 255, 0.9)), url("../img/pattern.png"); }
     .theme-checkbox:checked ~ .container .reset {
       background-color: rgba(102, 0, 255, 0.6); }
 

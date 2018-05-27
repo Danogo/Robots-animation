@@ -28,7 +28,7 @@ body {
 .container {
     min-height: 100vh;
     width: 100%;
-    background-image: linear-gradient(to right, rgba($color-mike, 0.9), rgba($color-luke, 0.9)), url('../img/pattern.png');
+    background-image: linear-gradient(to right bottom, rgba($color-bg, 0.9), rgba($color-bg-light, 0.9)), url('../img/pattern.png');
     background-position: top;
     background-size: cover;
     padding: 3rem;
@@ -81,8 +81,7 @@ body {
     position: absolute;
 
     &:checked ~ .container {
-        background-image: linear-gradient(to right bottom, rgba($color-bg, 0.9), rgba($color-bg-light, 0.9)), url('../img/pattern.png');
-
+        background-image: linear-gradient(to right, rgba($color-mike, 0.9), rgba($color-luke, 0.9)), url('../img/pattern.png');
         .reset {    
             background-color: rgba($color-luke, .6);
         }
