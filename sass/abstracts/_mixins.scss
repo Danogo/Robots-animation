@@ -1,5 +1,4 @@
-//ANOTHER METHOD with map, not used in this project
-
+// ======== MEDIA QUERIES using map ========
 // store breakpoints in a map
 $breakpoints: (
     xs: 37.5em,
@@ -10,7 +9,6 @@ $breakpoints: (
  
 // mixin :: Size (sm, md, lg)
 @mixin break($size) {
- 
     // map over breakpoints and use value of passed in size
     @media screen and (max-width: map-get($breakpoints, $size)) { @content; } //using map-get to grab variables values
 }
