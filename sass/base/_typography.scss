@@ -9,7 +9,7 @@ h1 {
     font-weight: 700;
     letter-spacing: .75rem;
     text-transform: uppercase;
-    background-color: rgba($color-bg-light, .6);
+    background-image: linear-gradient(to right bottom, rgba($color-luke, .6), rgba($color-luke, .3));
     padding: 1rem 2rem;
     display: inline-block;
     text-shadow: .3rem .3rem 1.5rem rgba($color-black, .2);
@@ -20,5 +20,6 @@ h1 {
 }
 
 .theme-checkbox:checked ~ .container h1 {
-    background-image: linear-gradient(to right bottom, rgba($color-luke, .6), rgba($color-luke, .3));
+    background-image: none;
+    background-color: rgba($color-bg-light, .6);
 }
