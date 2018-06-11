@@ -1,3 +1,4 @@
+// ============ LUKE (robot on the left)============
 @keyframes lukeFall {
     0% {
         opacity: 0;
@@ -11,7 +12,8 @@
     }
 }
 
-// ============ MIKE ==============
+
+// ============ MIKE (robot on the right) ==============
 @keyframes mikeSlide {
     0% {
         opacity: 0;
@@ -107,4 +109,6 @@
         transform: scale(1.1);
     }
 }
+
+
 
